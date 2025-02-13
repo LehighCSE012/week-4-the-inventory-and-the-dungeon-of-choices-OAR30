@@ -6,6 +6,23 @@ character encounters monsters, finds potions, and navigates
 based on user input.
 '''
 import random
+inventory = []
+def acquire_item(inventory, item):
+    item = ()
+    item = str(item)
+    inventory.append(item)
+    return updated_inventory
+def display_inventory(inventory):
+    count = 1
+    if not inventory:
+        print("Your inventory is empty.")
+    for i in inventory:
+        print(f"{count}. {i}")
+        count += 1
+    
+    
+        
+    
 
 """" 
 Displays Player Health
@@ -77,6 +94,10 @@ def check_for_treasure(has_treasure):
         print("The monster did not have the treasure. You continue your journey.")
     else:
         print("You found the hidden treasure! You win!")
+def enter_dungeon(player_health, inventory, dungeon_rooms):
+    for rooms in dungeon_rooms:
+        print("")
+    
         
 """"Main code function"""
 def main():
@@ -91,5 +112,13 @@ def main():
     treasure_obtained_in_combat = combat_encounter(current_player_health, monster_health_initial, has_treasure) # Using monster_health_initial
 
     check_for_treasure(treasure_obtained_in_combat) # Or has_treasure, depending on logic
+
+    dungeon_rooms = [
+        ("Creaky Shack", "onion", "trap", ("You avoided the trap!", "You triggered the trap!", -10)),
+        ("Cave", "key", "puzzle", ("You solved the puzzle!", "You couldn't solve the puzzle!", -5)),
+        ("Ginger Bread House", "health potion", "none", None)
+        ]
+     
+    
 if __name__ == "__main__":
     main()
