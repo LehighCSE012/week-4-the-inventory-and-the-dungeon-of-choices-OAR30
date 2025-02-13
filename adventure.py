@@ -96,7 +96,53 @@ def check_for_treasure(has_treasure):
         print("You found the hidden treasure! You win!")
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     for rooms in dungeon_rooms:
-        print("")
+        print(dungeon_rooms[0][0])
+        if rooms[0][1] is not None:
+            acquire_item(inventory, rooms[1])
+        if rooms[0][2] is not None:
+            if rooms[0][2] == puzzle:
+                print("You encounter a puzzle!")
+                print("Would you like to solve the puzzle or skip?")
+                choice = ["solve", "skip"]
+                    if choice == solve:
+                        success = random.choice([True, False])
+                            if success = True:
+                                print(rooms[1][3][0])
+                            print(rooms[1][3][1])
+                            player_health += rooms[1][3][2]
+                                if player_health < 0:
+                                    player_health = 0
+                                    print("You are barely alive!")
+                                    updated_player_health = player_health
+                                    return updated_player_health
+                    print("You decided to leave the dungeon")
+                    display_inventory(inventory)
+                    display_player_status(player_health)
+            if rooms[0][2] == trap:
+                print("You see a potential trap!")
+                print("Would you like to disarm the trap or skip?")
+                choice = ["disarm", "skip"]
+                    if choice == disarm:
+                        success = random.choice([True, False])
+                            if success = True:
+                                print(rooms[0][3][0])
+                            print(rooms[0][3][1])
+                            player_health += rooms[0][3][2]
+                                if player_health < 0:
+                                    player_health = 0
+                                    print("You are barely alive!")
+                                    updated_player_health = player_health
+                                    return updated_player_health
+                    print("You decided to leave the dungeon")
+                    display_inventory(inventory)
+                    display_player_status(player_health)
+            if rooms [0][2] == none
+                print("There doesn't seem to be a challenge in this room. You move on")
+                print("You decided to leave the dungeon")
+                display_player_status(player_health)
+    return player_health, inventory
+            
+            
     
         
 """"Main code function"""
