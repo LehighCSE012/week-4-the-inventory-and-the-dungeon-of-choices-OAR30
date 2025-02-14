@@ -41,8 +41,7 @@ def handle_path_choice(player_health):
         print("You decided to head left")
         print("You encounter a friendly gnome who heals you for 10 health points.")
         player_health += 10
-        updated_player_health = player_health
-        return updated_player_health
+        return player_health
     else:
         print("You decided to head right")
         print("You fall into a pit and lose 15 health points.")
@@ -50,8 +49,7 @@ def handle_path_choice(player_health):
         if player_health < 0:
             player_health = 0
             print("You are barely alive!")
-            updated_player_health = player_health
-            return updated_player_health
+            return player_health
         return updated_player_health
 def player_attack(monster_health):
     """Player Attack Module"""
@@ -113,7 +111,6 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                     if player_health < 0:
                         player_health = 0
                         print("You are barely alive!")
-                        updated_player_health = player_health
                     display_inventory(inventory)
                     display_player_status(player_health)
                 else:
@@ -129,14 +126,12 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                     if player_health < 0:
                         player_health = 0
                         print("You are barely alive!")
-                        updated_player_health = player_health
                     else:
                         print(rooms[3][1])
                         player_health += rooms[3][2]
                     if player_health < 0:
                         player_health = 0
                         print("You are barely alive!")
-                        updated_player_health = player_health
                     display_inventory(inventory)
                     display_player_status(player_health)
                 else:
