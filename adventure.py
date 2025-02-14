@@ -71,11 +71,11 @@ def monster_attack(player_health):
     player_health -= 20
     updated_player_health = int(player_health)
     return updated_player_health
-"""Combat between player and monster"""        
+"""Combat between player and monster"""  
 def combat_encounter(player_health, monster_health, has_treasure):
     while player_health > 0 and monster_health > 0:
         monster_health = player_attack(monster_health)
-        if monster_health <= 0: 
+        if monster_health <= 0:
             print("You defeated the monster")
             break
         player_health = monster_attack(player_health)
@@ -146,14 +146,13 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
             display_player_status(player_health)
             display_inventory(inventory)
     return player_health, inventory
-        
 """Main code function"""
 def main():
     inventory = []
     player_health_initial = 100
     monster_health_initial = 75
     has_treasure = False
-    
+
     has_treasure = random.choice([True, False])
 
     current_player_health = handle_path_choice(player_health_initial) # Using player_health_initial
