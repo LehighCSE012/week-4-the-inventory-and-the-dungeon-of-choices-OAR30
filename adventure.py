@@ -11,7 +11,6 @@ def acquire_item(inventory, item):
     print(f"You acquired a {item}!")
     inventory.append(item)
     return inventory
-def drop_item(
 def display_inventory(inventory):
     """Displays items in inventory"""
     count = 1
