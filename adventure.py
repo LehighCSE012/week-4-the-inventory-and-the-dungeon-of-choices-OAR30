@@ -9,7 +9,7 @@ import random
 inventory = []
 """ Adds item to inventory"""
 def acquire_item(inventory, item):
-    print(f"You found a {item} in the room!")
+    print(f"You found a {item} in the room")
     inventory.append(item)
     return inventory
 """Displays items in inventory"""
