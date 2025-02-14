@@ -39,15 +39,14 @@ def handle_path_choice(player_health):
         print("You encounter a friendly gnome who heals you for 10 health points.")
         player_health += 10
         return player_health
-    else:
-        print("You decided to head right")
-        print("You fall into a pit and lose 15 health points.")
-        player_health -= 15
-        if player_health < 0:
-            player_health = 0
-            print("You are barely alive!")
-            return player_health
+    print("You decided to head right")
+    print("You fall into a pit and lose 15 health points.")
+    player_health -= 15
+    if player_health < 0:
+        player_health = 0
+        print("You are barely alive!")
         return player_health
+    return player_health
 def player_attack(monster_health):
     """Player Attack Module"""
     monster_health -= 15
@@ -157,6 +156,7 @@ def main():
         ("Cave", "key", "puzzle", ("You solved the puzzle!", "You couldn't solve the puzzle!", -5)),
         ("Ginger Bread House", "health potion", "none", None)
         ]
-    current_player_health, inventory = enter_dungeon(current_player_health, inventory, dungeon_rooms)
+    current_player_health, inventory = enter_dungeon(current_player_health, 
+                                                     inventory, dungeon_rooms)
 if __name__ == "__main__":
     main()
