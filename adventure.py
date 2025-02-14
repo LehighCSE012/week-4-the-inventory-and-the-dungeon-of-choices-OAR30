@@ -151,7 +151,7 @@ def main():
     # Using monster_health_initial
     check_for_treasure(treasure_obtained_in_combat) # Or has_treasure, depending on logic
     dungeon_rooms = [
-        ("Creaky Shack", "gold coins", "trap", 
+        ("Creaky Shack", "gold coins", "trap",
         ("You avoided the trap!", "You triggered the trap!", -10)),
         ("Cave", "key", "puzzle", ("You solved the puzzle!", "You couldn't solve the puzzle!", -5)),
         ("Ginger Bread House", "health potion", "none", None)
