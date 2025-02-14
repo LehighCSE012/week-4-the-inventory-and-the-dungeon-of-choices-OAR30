@@ -99,7 +99,7 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                 choice = input("Would you like to solve the puzzle or skip?: ")
                 if choice == "solve":
                     success = random.choice([True, False])
-                    if success == True:
+                    if success is True:
                         print(rooms[3][0])
                         player_health += rooms[3][2]
                     else:
@@ -117,7 +117,7 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                 choice = input("Would you like to disarm the trap or skip?: ")
                 if choice == "disarm":
                     success = random.choice([True, False])
-                    if success == True:
+                    if success is True:
                         print(rooms[3][0])
                         player_health += rooms[3][2]
                     if player_health < 0:
@@ -156,7 +156,7 @@ def main():
         ("Cave", "key", "puzzle", ("You solved the puzzle!", "You couldn't solve the puzzle!", -5)),
         ("Ginger Bread House", "health potion", "none", None)
         ]
-    current_player_health, inventory = enter_dungeon(current_player_health, 
+    current_player_health, inventory = enter_dungeon(current_player_health,
                                                      inventory, dungeon_rooms)
 if __name__ == "__main__":
     main()
