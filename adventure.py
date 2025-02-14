@@ -88,7 +88,7 @@ def check_for_treasure(has_treasure):
         print("You found the hidden treasure! You win!")
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     """Player enters different dungeons and discovers different items"""
-    print("You found a gold coins in the room.") 
+    print("You found a gold coins in the room.")
     #Work around for broken test, assignment requirements and test requirements differed
     for rooms in dungeon_rooms:
         print(rooms[0])
@@ -147,11 +147,13 @@ def main():
     has_treasure = False
     has_treasure = random.choice([True, False])
     current_player_health = handle_path_choice(player_health_initial) # Using player_health_initial
-    treasure_obtained_in_combat = combat_encounter(current_player_health, monster_health_initial, has_treasure) 
+    treasure_obtained_in_combat = combat_encounter(current_player_health,
+                                                    monster_health_initial, has_treasure)
     # Using monster_health_initial
     check_for_treasure(treasure_obtained_in_combat) # Or has_treasure, depending on logic
     dungeon_rooms = [
-        ("Creaky Shack", "gold coins", "trap", ("You avoided the trap!", "You triggered the trap!", -10)),
+        ("Creaky Shack", "gold coins", "trap", 
+        ("You avoided the trap!", "You triggered the trap!", -10)),
         ("Cave", "key", "puzzle", ("You solved the puzzle!", "You couldn't solve the puzzle!", -5)),
         ("Ginger Bread House", "health potion", "none", None)
         ]
