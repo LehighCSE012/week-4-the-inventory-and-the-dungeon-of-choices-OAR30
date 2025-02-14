@@ -143,8 +143,6 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                     continue
             elif rooms [2] == "none":
                 print("There doesn't seem to be a challenge in this room. You move on")
-                display_player_status(player_health)
-                display_inventory(inventory)
             display_player_status(player_health)
             display_inventory(inventory)
     return player_health, inventory
