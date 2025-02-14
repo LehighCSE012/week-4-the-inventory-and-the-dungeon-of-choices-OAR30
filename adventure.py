@@ -18,6 +18,7 @@ def display_inventory(inventory):
     if not inventory:
         print("Your inventory is empty.")
     for i in inventory:
+        print("Your inventory:")
         print(f"{count}. {i}")
         count += 1
 """" 
