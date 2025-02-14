@@ -96,7 +96,7 @@ def check_for_treasure(has_treasure):
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     for rooms in dungeon_rooms:
         print(rooms[0])
-        if rooms[0]is not None:
+        if rooms[1]is not None:
             acquire_item(inventory, rooms[1])
         if rooms[2] is not None:
             if rooms[2] == "puzzle":
@@ -107,10 +107,6 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                     if success == True:
                         print(rooms[3][0])
                         player_health += rooms[3][2]
-                    if player_health < 0:
-                        player_health = 0
-                        print("You are barely alive!")
-                        updated_player_health = player_health
                     else:
                         print(rooms[3][1])
                         player_health += rooms[3][2]
