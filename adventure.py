@@ -7,9 +7,12 @@ based on user input.
 '''
 import random
 inventory = []
+""" Adds item to inventory"""
 def acquire_item(inventory, item):
+    print(f"You acquired a {item}!")
     inventory.append(item)
     return inventory
+"""Displays items in inventory"""
 def display_inventory(inventory):
     count = 1
     if not inventory:
@@ -29,7 +32,7 @@ Displays Player Health
 """
 def display_player_status(player_health):
     print("Your current health:", player_health)
-""""Determines direction player goes in"""
+"""Determines direction player goes in"""
 def handle_path_choice(player_health):
     path_choice = random.choice(["left", "right"])
 
@@ -49,13 +52,13 @@ def handle_path_choice(player_health):
             updated_player_health = player_health
             return updated_player_health
         return updated_player_health
-""""Player Attack Module"""
+"""Player Attack Module"""
 def player_attack(monster_health):
     monster_health -= 15
     print("You strike the monster for 15 damage!")
     updated_monster_health = int(monster_health)
     return updated_monster_health
-""""Monster Attack Module"""
+"""Monster Attack Module"""
 def monster_attack(player_health):
     result = random.choice([True, False])
     if result:
@@ -67,7 +70,7 @@ def monster_attack(player_health):
     player_health -= 20
     updated_player_health = int(player_health)
     return updated_player_health
-""""Combat between player and monster"""        
+"""Combat between player and monster"""        
 def combat_encounter(player_health, monster_health, has_treasure):
     while player_health > 0 and monster_health > 0:
         monster_health = player_attack(monster_health)
@@ -81,12 +84,13 @@ def combat_encounter(player_health, monster_health, has_treasure):
             break
         display_player_status(player_health)
     return has_treasure
-""""Checks for treasure"""
+"""Checks for treasure"""
 def check_for_treasure(has_treasure):
     if has_treasure == False:
         print("The monster did not have the treasure. You continue your journey.")
     else:
         print("You found the hidden treasure! You win!")
+"""Player enters different dungeons and discovers different items"""
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     for rooms in dungeon_rooms:
         print(rooms[0])
@@ -147,7 +151,7 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
             display_inventory(inventory)
     return player_health, inventory
         
-""""Main code function"""
+"""Main code function"""
 def main():
     player_health_initial = 100
     monster_health_initial = 75
