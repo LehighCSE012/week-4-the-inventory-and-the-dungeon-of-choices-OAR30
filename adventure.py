@@ -9,7 +9,7 @@ import random
 inventory = []
 """ Adds item to inventory"""
 def acquire_item(inventory, item):
-    print(f"You found a {item}!")
+    print(f"You found a {item} in the room!")
     inventory.append(item)
     return inventory
 """Displays items in inventory"""
@@ -168,7 +168,7 @@ def main():
     check_for_treasure(treasure_obtained_in_combat) # Or has_treasure, depending on logic
 
     dungeon_rooms = [
-        ("Creaky Shack", "onion", "trap", ("You avoided the trap!", "You triggered the trap!", -10)),
+        ("Creaky Shack", "gold coins", "trap", ("You avoided the trap!", "You triggered the trap!", -10)),
         ("Cave", "key", "puzzle", ("You solved the puzzle!", "You couldn't solve the puzzle!", -5)),
         ("Ginger Bread House", "health potion", "none", None)
         ]
