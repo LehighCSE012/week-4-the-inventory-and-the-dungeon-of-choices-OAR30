@@ -11,6 +11,7 @@ def acquire_item(inventory, item):
     print(f"You acquired a {item}!")
     inventory.append(item)
     return inventory
+def drop_item(
 def display_inventory(inventory):
     """Displays items in inventory"""
     count = 1
@@ -21,6 +22,8 @@ def display_inventory(inventory):
     for i in inventory:
         print(f"{count}. {i}")
         count += 1
+    if "armor" in inventory:
+        print("You found armor!")
 def display_player_status(player_health):
     """" 
     Displays Player Health
@@ -137,9 +140,19 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                 print("There doesn't seem to be a challenge in this room. You move on")
             display_player_status(player_health)
             display_inventory(inventory)
+    print("Demonstrating tuple immutability:")
+    example_room = ("Test room", "sword", "none", None)
+    print(f"Original room: {example_room}")
+    try:
+        example_room = "Modified room"
+    except TypeError as e:
+        print(f"Error: {e}.")
+        print("Tuples are immutable.")
     return player_health, inventory
 def main():
     """Main code function"""
+    starting_items = ["water bottle"]
+    inventory = starting_items + []
     inventory = []
     player_health_initial = 100
     monster_health_initial = 75
