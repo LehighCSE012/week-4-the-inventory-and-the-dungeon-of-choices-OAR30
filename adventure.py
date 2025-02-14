@@ -50,7 +50,7 @@ def handle_path_choice(player_health):
             player_health = 0
             print("You are barely alive!")
             return player_health
-        return updated_player_health
+        return player_health
 def player_attack(monster_health):
     """Player Attack Module"""
     monster_health -= 15
@@ -85,7 +85,7 @@ def combat_encounter(player_health, monster_health, has_treasure):
     return has_treasure
 def check_for_treasure(has_treasure):
     """Checks for treasure"""
-    if has_treasure == False:
+    if has_treasure = False:
         print("The monster did not have the treasure. You continue your journey.")
     else:
         print("You found the hidden treasure! You win!")
